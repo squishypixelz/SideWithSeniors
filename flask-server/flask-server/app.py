@@ -9,11 +9,13 @@ from bson.objectid import ObjectId
 
 baseDirectory = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(baseDirectory, ".env"))
-
+print("aa")
 app = Flask(__name__)
 CORS(app)
-
-client = MongoClient(os.getenv("DBKEY"), connectTimeoutMS = 30000, socketTimeoutMS = None, connect = False, maxPoolSize = 1)
+DBKEY = os.getenv("DBKEY")
+print("retrieved env value")
+client = MongoClient(DBKEY, connectTimeoutMS = 30000, socketTimeoutMS = None, connect = False, maxPoolSize = 1)
+print("connected to mongo client")
 db = client["SWS"]
 users = db["credentials"]
 opportunities = db["opportunities"]
@@ -65,7 +67,9 @@ def register():
 
 @app.route("/api/signin", methods=["POST"])
 def signin():
+    print("reached signin")
     data = request.get_json()
+    print(data)
     email = data.get("email")
     password = data.get("password")
 
