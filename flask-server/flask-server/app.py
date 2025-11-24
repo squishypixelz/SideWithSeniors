@@ -13,7 +13,7 @@ load_dotenv(os.path.join(baseDirectory, ".env"))
 app = Flask(__name__)
 CORS(app)
 
-client = MongoClient(os.getenv("DBKEY"))
+client = MongoClient(os.getenv("DBKEY"), connectTimeoutMS = 30000, socketTimeoutMS = None, connect = False, maxPoolSize = 1)
 db = client["SWS"]
 users = db["credentials"]
 opportunities = db["opportunities"]
