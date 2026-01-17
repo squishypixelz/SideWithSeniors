@@ -12,7 +12,7 @@ function Signup() {
     setMessage("Registering...");
 
     try {
-      const res = await fetch("https://squishypixelz.pythonanywhere.com/api/register", {
+      const res = await fetch("https://18.219.56.224/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

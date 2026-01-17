@@ -20,7 +20,7 @@ function AdminDashboardContent() {
     }
 
     try {
-      const response = await fetch("https://squishypixelz.pythonanywhere.com/api/opportunities", {
+      const response = await fetch("https://18.219.56.224/api/opportunities", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, description, category, location, time, slots })
@@ -45,7 +45,7 @@ function AdminDashboardContent() {
 
   const handleViewSignups = async () => {
     try {
-      const response = await fetch("https://squishypixelz.pythonanywhere.com/api/opportunities")
+      const response = await fetch("https://18.219.56.224/api/opportunities")
       const data = await response.json()
       if (data.success) {
         setOpportunitiesList(data.opportunities)

@@ -13,7 +13,7 @@ function Signin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("https://squishypixelz.pythonanywhere.com/api/signin", {
+      const response = await fetch("https://18.219.56.224/api/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

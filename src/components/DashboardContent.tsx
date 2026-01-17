@@ -22,7 +22,7 @@ function DashboardContent() {
   const [emailInput, setEmailInput] = useState("")
 
   useEffect(() => {
-    fetch("https://squishypixelz.pythonanywhere.com/api/opportunities")
+    fetch("https://18.219.56.224/api/opportunities")
       .then(res => res.json())
       .then(data => setOpportunities(data.opportunities || []))
       .catch(err => console.error(err))
@@ -30,7 +30,7 @@ function DashboardContent() {
 
   const handleSignup = async (id: string, email: string) => {
     try {
-      const response = await fetch(`https://squishypixelz.pythonanywhere.com/api/opportunities/${id}/signup`, {
+      const response = await fetch(`https://18.219.56.224/api/opportunities/${id}/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email })
