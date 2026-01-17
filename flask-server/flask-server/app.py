@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import bcrypt
 from bson.objectid import ObjectId
 
+# hi
 
 baseDirectory = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(baseDirectory, ".env"))
